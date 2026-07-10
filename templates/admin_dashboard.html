@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>🎓 Student Result Management System</h1>
+    <p>Admin Dashboard</p>
+</div>
+
+<div class="box">
+
+    <h2 class="admin-title">Admin Dashboard</h2>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h2>👨‍🎓 {{ students|length }}</h2>
+            <p>Total Students</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>📄 {{ results|length }}</h2>
+            <p>Total Results</p>
+        </div>
+
+    </div>
+
+    <h3>Student Records</h3>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>USN</th>
+        </tr>
+
+        {% for s in students %}
+        <tr>
+            <td>{{ s.name }}</td>
+            <td>{{ s.usn }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <center style="margin-top:20px;">
+        <a href="/" class="btn">🏠 Back to Dashboard</a>
+    </center>
+
+</div>
+
+</body>
+</html>

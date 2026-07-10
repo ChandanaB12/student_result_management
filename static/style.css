@@ -1,0 +1,246 @@
+/* ===========================
+   Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f7fc;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:8px;
+}
+
+.header h1{
+    font-size:16px;
+    font-weight:600;
+    margin:0;
+}
+
+.header p{
+    font-size:11px;
+    margin-top:4px;
+    color:#dfe6e9;
+}
+
+/* ===========================
+   Main Box
+=========================== */
+
+.box{
+    width:95%;
+    max-width:900px;
+    margin:15px auto;
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+/* ===========================
+   Headings
+=========================== */
+
+.admin-title{
+    text-align:center;
+    font-size:12px;
+    font-weight:400;
+    margin-bottom:12px;
+    color:#2c3e50;
+}
+
+.box h3{
+    font-size:18px;
+    margin:20px 0 10px;
+    color:#2c3e50;
+}
+
+/* ===========================
+   Dashboard Cards
+=========================== */
+
+.stats{
+    display:flex;
+    gap:15px;
+    justify-content:space-between;
+    margin-bottom:25px;
+}
+
+.stat-card{
+    flex:1;
+    background:#3498db;
+    color:white;
+    text-align:center;
+    padding:12px;
+    border-radius:10px;
+}
+
+.stat-card h2{
+    font-size:18px;
+    color:white;
+    margin-bottom:8px;
+}
+
+.stat-card p{
+    font-size:13px;
+}
+
+/* ===========================
+   Table
+=========================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th{
+    background:#3498db;
+    color:white;
+    padding:10px;
+    font-size:14px;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+    border:1px solid #ddd;
+    font-size:13px;
+}
+
+th, td{
+    padding:8px;
+}
+
+tr:nth-child(even){
+    background:#f8f9fa;
+}
+
+tr:hover{
+    background:#eef6ff;
+}
+
+/* ===========================
+   Student Info
+=========================== */
+
+.student-info{
+    background:#eef6ff;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.student-info p{
+    font-size:15px;
+    margin:8px 0;
+}
+
+/* ===========================
+   Result Summary
+=========================== */
+
+.result-summary{
+    margin-top:20px;
+}
+
+.result-summary p{
+    font-size:16px;
+    margin:8px 0;
+}
+
+.pass{
+    color:green;
+    font-weight:bold;
+}
+
+.fail{
+    color:red;
+    font-weight:bold;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.btn{
+    display:inline-block;
+    background:#3498db;
+    color:white;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:8px;
+    border:none;
+    font-size:14px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.btn:hover{
+    background:#2980b9;
+}
+
+/* ===========================
+   Login Inputs
+=========================== */
+
+.input-box,
+input{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+    margin:10px 0;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    .stats{
+        flex-direction:column;
+    }
+
+    .box{
+        width:95%;
+        padding:15px;
+    }
+
+    .header h1{
+        font-size:16px;
+    }
+
+    .admin-title{
+        font-size:18px;
+    }
+
+    .stat-card h2{
+        font-size:18px;
+    }
+
+    .stat-card p{
+        font-size:14px;
+    }
+
+    th,
+    td{
+        font-size:13px;
+    }
+}

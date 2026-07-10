@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>🎓 Student Result Management System</h1>
+    <p>Student Result Portal</p>
+</div>
+
+{% if student %}
+
+<div class="box">
+
+    <h2>Student Result</h2>
+
+    <div class="student-info">
+        <p><strong>👤 Name:</strong> {{ student.name }}</p>
+        <p><strong>🆔 USN:</strong> {{ student.usn }}</p>
+        <p><strong>🏫 Department:</strong> {{ student.department }}</p>
+        <p><strong>📚 Semester:</strong> {{ student.semester }}</p>
+    <p><strong>📅 Academic Year:</strong> {{ student.academic_year }}</p>
+    </div>
+
+    <table>
+
+        <tr>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Internal</th>
+            <th>External</th>
+            <th>Total</th>
+            <th>Result</th>
+        </tr>
+
+        {% for r in results %}
+        <tr>
+            <td>{{ r.subject_code }}</td>
+            <td>{{ r.subject_name }}</td>
+            <td>{{ r.internal_marks }}</td>
+            <td>{{ r.external_marks }}</td>
+            <td>{{ r.total_marks }}</td>
+            <td>
+                {% if r.status == "PASS" %}
+                    <span style="color:green;font-weight:bold;">PASS</span>
+                {% else %}
+                    <span style="color:red;font-weight:bold;">FAIL</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <div class="result-summary">
+
+        <p><strong>📊 Total Marks :</strong> {{ total }}</p>
+
+        <p><strong>📈 Percentage :</strong> {{ percentage }}%</p>
+
+        <p><strong>🏆 Grade :</strong> {{ grade }}</p>
+
+        {% if status == "PASS" %}
+            <p class="pass"><strong>✅ Overall Result : PASS</strong></p>
+        {% else %}
+            <p class="fail"><strong>❌ Overall Result : FAIL</strong></p>
+        {% endif %}
+
+    </div>
+
+    <center>
+
+        <button onclick="window.print()" class="btn">
+            🖨 Print Result
+        </button>
+
+        <a href="/login/" class="btn">
+            🔙 Back
+        </a>
+
+    </center>
+
+</div>
+
+{% else %}
+
+<div class="box">
+
+    <h2>No Result Found</h2>
+
+    <center>
+        <a href="/login/" class="btn">Back</a>
+    </center>
+
+</div>
+
+{% endif %}
+
+</body>
+</html>

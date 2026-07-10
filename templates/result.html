@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SRMS | Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="header">Student Result Management System</div>
+    <div class="box">
+        <h2>{{ student.student_name }}</h2>
+        <p><b>Roll ID:</b> {{ student.roll_id }}</p>
+        <p><b>Class:</b> {{ student.class_id }}</p>
+    </div>
+    
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        {% for r in results %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ r.subject.subject_name }}</td>
+            <td>{{ r.marks }}</td>
+        </tr>
+        {% endfor %}
+        <tr style="font-weight:bold;">
+            <td colspan="2">Total Marks</td>
+            <td>{{ total_marks }}</td>
+        </tr>
+        <tr style="font-weight:bold;">
+            <td colspan="2">Percentage</td>
+            <td>{{ percentage }}%</td>
+        </tr>
+    </table>
+    <div style="text-align:center; margin:20px;">
+        <a href="/login/" style="background:#337ab7; color:white; padding:10px 20px; text-decoration:none; border-radius:4px;">Back</a>
+    </div>
+</body>
+</html>
